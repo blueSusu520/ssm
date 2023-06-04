@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ssm.mapper.CostMapper">
+
+    <!--查询消费列表-->
+    <!--List<Cost> getCostList();-->
+    <select id="getCostList" resultType="Cost">
+        select * from cost
+    </select>
+
+    <!--添加消费信息-->
+    <!--void addCost(Cost cost);-->
+    <insert id="addCost">
+        insert into cost values (null ,#{costDay},#{morning},#{afternoon},#{evening},#{totalcost})
+    </insert>
+
+    <!--根据id查询消费信息-->
+    <!--Cost getCostById(Integer id);-->
+    <select id="getCostById" resultType="Cost">
+        select * from cost where id=#{id}
+    </select>
+
+    <!--修改消费信息-->
+    <!-- void editCost(Cost cost);-->
+    <update id="editCost">
+        update cost set  costDay=#{costDay},morning=#{morning},afternoon=#{afternoon},evening=#{evening},totalcost=#{totalcost}
+        where id=#{id}
+    </update>
+
+    <!--删除消费信息-->
+    <!--void removeCostById(Integer id);-->
+    <delete id="removeCostById">
+        delete from cost where id = #{id}
+    </delete>
+
+
+</mapper>

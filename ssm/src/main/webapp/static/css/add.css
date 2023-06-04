@@ -1,0 +1,26 @@
+.tbl_add {
+    margin-left: 28%;
+    margin-top: 10%;
+    width: 700px;
+    border-collapse: collapse;
+    font-size: 25px;
+}
+
+/*设置表头属性*/
+table th {
+    border:1px solid black;
+    background-color: #71C1FB;
+    width: 150px;
+    height: 30px;
+}
+/*设置行属性*/
+table td{
+    border:1px solid black;
+    text-align: center;
+    height: 15px;
+    padding-top: 5px;
+}
+
+table tr td input{
+    width: 200px;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" th:href="@{/static/css/add.css}">
+</head>
+<body>
+<form th:action="@{/cost/page/1}" method="post">
+    <input type="hidden" name="_method" value="put">
+    <input type="hidden" name="id" th:value="${cost.id}">
+    <table class="tbl_add">
+        <tr>
+            <th colspan="2">修改消费记录</th>
+        </tr>
+        <tr>
+            <td>时间</td>
+            <td>
+                <input type="text" name="costDay" th:value="${#dates.format(cost.costDay,'yyyy-MM-dd')}">
+            </td>
+        </tr>
+        <tr>
+            <td>早上消费</td>
+            <td>
+                <input type="text" name="morning" th:value="${cost.morning}">
+            </td>
+        </tr>
+        <tr>
+            <td>下午消费</td>
+            <td>
+                <input type="text" name="afternoon" th:value="${cost.afternoon}">
+            </td>
+        </tr>
+        <tr>
+            <td>晚上消费</td>
+            <td>
+                <input type="text" name="evening" th:value="${cost.evening}">
+            </td>
+        </tr>
+        <tr>
+            <td>日结</td>
+            <td>
+                <input type="text" name="totalcost" th:value="${cost.totalcost}">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="修改">
+                <a th:href="@{/cost/page/1}"><button>返回主页</button></a>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
